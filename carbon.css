@@ -1,0 +1,520 @@
+/* carbon.css - Premium theme for Carbon & Its Compounds */
+:root {
+  --c-primary: #00e5ff;
+  --c-primary-glow: rgba(0, 229, 255, 0.4);
+  --c-secondary: #00ff88;
+  --c-secondary-glow: rgba(0, 255, 136, 0.4);
+  --c-accent: #ff3366;
+  --c-bg: #0a0a0f;
+  --c-surface: rgba(20, 20, 30, 0.7);
+  --c-border: rgba(255, 255, 255, 0.1);
+}
+
+body.carbon-theme {
+  background-color: var(--c-bg);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: var(--c-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--c-border);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 var(--c-primary-glow);
+}
+
+/* Gradients */
+.gradient-text-carbon {
+  background: linear-gradient(135deg, var(--c-primary), var(--c-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.carbon-badge {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--c-primary);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.carbon-btn {
+  background: linear-gradient(135deg, var(--c-primary), #00b3cc);
+  color: #000;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.carbon-btn:hover {
+  box-shadow: 0 0 20px var(--c-primary-glow);
+  transform: translateY(-2px);
+}
+
+/* Layout Utilities */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mt-10 { margin-top: 1rem; }
+
+/* Module 1: Versatile Nature (Drag and Drop) */
+.m1-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+}
+.tools-panel {
+  text-align: center;
+}
+.draggable-atom {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem auto;
+  cursor: grab;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+}
+.draggable-atom:active {
+  cursor: grabbing;
+  transform: scale(0.9);
+}
+.atom-c { background: #333; color: #fff; border: 2px solid var(--c-primary); }
+.atom-h { background: #eee; color: #333; border: 2px solid var(--c-secondary); }
+
+.workspace {
+  min-height: 400px;
+  background: rgba(0,0,0,0.2);
+  border: 2px dashed var(--c-border);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.placed-atom {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+}
+.placed-c { background: #333; color: #fff; box-shadow: 0 0 10px var(--c-primary); }
+.placed-h { background: #eee; color: #333; box-shadow: 0 0 10px var(--c-secondary); }
+.bond-line {
+  position: absolute;
+  height: 4px;
+  background: var(--c-primary);
+  transform-origin: left center;
+  z-index: 5;
+}
+
+/* Module 2: Dot Structures */
+.molecule-selector {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.mol-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--c-border);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.mol-btn:hover, .mol-btn.active {
+  background: var(--c-primary);
+  color: #000;
+  border-color: var(--c-primary);
+}
+
+.svg-container svg {
+  max-width: 100%;
+  height: 300px;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.2));
+}
+
+.electron-pair {
+  transition: all 0.3s ease;
+}
+.electron-pair:hover circle {
+  fill: var(--c-accent);
+  r: 6;
+}
+
+/* Module 3: Activities */
+.activities-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--c-border);
+  padding-bottom: 1rem;
+}
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: color 0.3s;
+}
+.tab-btn.active {
+  color: var(--c-primary);
+  font-weight: 600;
+}
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--c-primary);
+  border-radius: 3px 3px 0 0;
+}
+
+.activity-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.act-video-placeholder {
+  background: #000;
+  border-radius: 10px;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 1.2rem;
+}
+.act-details h3 { color: var(--c-secondary); margin-bottom: 1rem;}
+.act-details ul { padding-left: 1.5rem; line-height: 1.6; }
+
+/* Module 4: Hydrocarbons 3D */
+.hc-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.hc-select {
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: 1px solid var(--c-border);
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #333;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+input:checked + .slider { background-color: var(--c-primary); }
+input:checked + .slider:before { transform: translateX(26px); }
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
+
+.hc-viewer {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+/* CSS 3D Scene */
+.scene-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate3d 10s infinite linear;
+}
+@keyframes rotate3d {
+  from { transform: rotateY(0deg) rotateX(10deg); }
+  to { transform: rotateY(360deg) rotateX(10deg); }
+}
+
+.atom-3d {
+  position: absolute;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+.atom-3d-c {
+  width: 80px; height: 80px;
+  background: radial-gradient(circle at 30% 30%, #555, #111);
+  top: 50%; left: 50%;
+  margin-top: -40px; margin-left: -40px;
+}
+.atom-3d-h {
+  width: 40px; height: 40px;
+  background: radial-gradient(circle at 30% 30%, #fff, #aaa);
+}
+.bond-3d {
+  position: absolute;
+  height: 10px;
+  background: linear-gradient(to bottom, #ccc, #777);
+  top: 50%; left: 50%;
+  transform-origin: left center;
+  margin-top: -5px;
+}
+
+/* Module 5: Reactions */
+.reaction-builder {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.reaction-types {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.rxn-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--c-border);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.rxn-btn:hover, .rxn-btn.active {
+  background: rgba(0, 255, 136, 0.2);
+  border-color: var(--c-secondary);
+  color: var(--c-secondary);
+}
+.reaction-stage {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.equation-display {
+  font-size: 1.8rem;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.equation-display span.reactants { color: #fff; }
+.equation-display span.products { color: var(--c-secondary); }
+.equation-display span.arrow { color: var(--c-primary); margin: 0 1rem; }
+.equation-display span.condition { display:block; font-size: 0.9rem; color: #aaa; margin-top:0.5rem;}
+
+.anim-box {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 150px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Module 6: Soap */
+.soap-sim {
+  position: relative;
+  overflow: hidden;
+}
+.soap-controls {
+  text-align: center;
+  margin-bottom: 2rem;
+  z-index: 10;
+  position: relative;
+}
+.soap-status {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--c-primary);
+}
+.soap-stage {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,100,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+}
+.oil-drop {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, #d4af37, #8a7323);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+  transition: all 0.4s ease;
+}
+.soap-mol {
+  position: absolute;
+  width: 100px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  transform-origin: right center;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.soap-head {
+  width: 14px;
+  height: 14px;
+  background: var(--c-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--c-primary-glow);
+}
+.soap-tail {
+  height: 4px;
+  flex-grow: 1;
+  background: repeating-linear-gradient(90deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+}
+
+/* Quizzes */
+.quiz-container-small {
+  margin-top: 2rem;
+  background: rgba(0,0,0,0.4);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border-left: 4px solid var(--c-primary);
+}
+.quiz-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--c-primary);
+}
+.q-box { margin-bottom: 1.5rem; }
+.q-opt-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--c-border);
+  color: #fff;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.q-opt-btn:hover { background: rgba(255,255,255,0.1); }
+.q-opt-btn.correct { background: rgba(0,255,136,0.2); border-color: var(--c-secondary); }
+.q-opt-btn.wrong { background: rgba(255,51,102,0.2); border-color: var(--c-accent); }
+.q-feedback { margin-top: 0.5rem; font-size: 0.9rem; display: none; }
+
+/* Carbon Atom Hero Anim */
+.carbon-atom-anim {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+.nucleus {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px; height: 50px;
+  background: radial-gradient(circle, var(--c-primary), #0055ff);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1.5rem; color: #000;
+  box-shadow: 0 0 30px var(--c-primary-glow);
+}
+.orbit {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px dashed rgba(255,255,255,0.2);
+  border-radius: 50%;
+  animation: spin linear infinite;
+}
+.orbit-1 { width: 120px; height: 120px; animation-duration: 4s; }
+.orbit-2 { width: 220px; height: 220px; animation-duration: 8s; animation-direction: reverse;}
+.electron {
+  position: absolute;
+  width: 12px; height: 12px;
+  background: var(--c-secondary);
+  border-radius: 50%;
+  top: -6px; left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px var(--c-secondary-glow);
+}
+.orbit-1 .electron:nth-child(2) { top: auto; bottom: -6px; }
+.orbit-2 .electron:nth-child(2) { top: auto; bottom: -6px; }
+.orbit-2 .electron:nth-child(3) { top: 50%; left: -6px; transform: translateY(-50%); }
+.orbit-2 .electron:nth-child(4) { top: 50%; left: auto; right: -6px; transform: translateY(-50%); }
+
+@keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }

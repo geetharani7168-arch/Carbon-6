@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chemical Reactions & Equations | Class 10 CBSE Science</title>
+  <meta name="description" content="Interactive CBSE Class 10 learning platform for Chemical Reactions and Equations. Includes overview, MCQ quiz, and competency-based practice questions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-particles" id="bgParticles"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-icon">⚗️</span>
+        <div class="logo-text">
+          <span class="logo-title">ChemLearn</span>
+          <span class="logo-sub">CBSE Class 10</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#overview" class="nav-link">Overview</a></li>
+        <li><a href="#concepts" class="nav-link">Key Concepts</a></li>
+        <li><a href="#reactions" class="nav-link">Reaction Types</a></li>
+        <li><a href="activities.html" class="nav-link nav-link-highlight">🔬 Activities</a></li>
+        <li><a href="carbon.html" class="nav-link" style="color:#00e5ff;font-weight:bold;">💠 Carbon Simulation</a></li>
+        <li><a href="#mcq" class="nav-link">MCQ Quiz</a></li>
+        <li><a href="#questions" class="nav-link">Practice Q&A</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">📚 CBSE Class 10 · Chapter 1</div>
+      <h1 class="hero-title">Chemical Reactions <span class="gradient-text">&amp; Equations</span></h1>
+      <p class="hero-desc">Master chemical changes, balance equations, and explore reaction types through interactive lessons and competency-based practice.</p>
+      <div class="hero-stats">
+        <div class="stat-card"><span class="stat-num">6</span><span class="stat-label">Reaction Types</span></div>
+        <div class="stat-card"><span class="stat-num">25+</span><span class="stat-label">MCQ Questions</span></div>
+        <div class="stat-card"><span class="stat-num">20+</span><span class="stat-label">Practice Q&A</span></div>
+      </div>
+      <div class="hero-actions">
+        <a href="#overview" class="btn-primary">Start Learning 🚀</a>
+        <a href="activities.html" class="btn-secondary">🔬 NCERT Activities</a>
+        <a href="carbon.html" class="btn-secondary" style="border-color:#00e5ff;color:#00e5ff;">💠 Carbon Simulation</a>
+        <a href="#mcq" class="btn-secondary">Take Quiz 🎯</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="molecule-anim">
+        <div class="atom atom-1"><span>H</span></div>
+        <div class="atom atom-2"><span>O</span></div>
+        <div class="atom atom-3"><span>C</span></div>
+        <div class="atom atom-4"><span>N</span></div>
+        <div class="reaction-glow"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Overview -->
+  <section class="section" id="overview">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">📖 Chapter Overview</div>
+        <h2 class="section-title">What is a Chemical Reaction?</h2>
+        <p class="section-desc">Understanding the transformation of matter at the atomic and molecular level</p>
+      </div>
+      <div class="overview-grid">
+        <div class="overview-card">
+          <div class="ov-icon">🔬</div>
+          <h3>Chemical Change</h3>
+          <p>A process where reactants transform into new substances (products) with different properties. New bonds form and old bonds break.</p>
+        </div>
+        <div class="overview-card">
+          <div class="ov-icon">⚖️</div>
+          <h3>Chemical Equation</h3>
+          <p>A symbolic representation using chemical formulas. A balanced equation obeys the Law of Conservation of Mass.</p>
+        </div>
+        <div class="overview-card">
+          <div class="ov-icon">🔍</div>
+          <h3>Signs of Chemical Reaction</h3>
+          <ul class="ov-list">
+            <li>Change in colour</li>
+            <li>Evolution of gas</li>
+            <li>Formation of precipitate</li>
+            <li>Change in temperature</li>
+            <li>Change in state</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="balancing-section">
+        <h3 class="subsection-title">⚖️ Balancing a Chemical Equation</h3>
+        <p class="subsection-desc">Law of Conservation of Mass: atoms of each element must be equal on both sides.</p>
+        <div class="equation-demo">
+          <div class="eq-step">
+            <div class="step-badge">Unbalanced</div>
+            <div class="equation-box unbalanced">
+              <span class="reactant">Mg</span><span class="op">+</span><span class="reactant">O₂</span><span class="arrow">→</span><span class="product">MgO</span>
+            </div>
+            <p class="step-note">O: 2 ≠ 1 ✗</p>
+          </div>
+          <div class="eq-step">
+            <div class="step-badge balanced-badge">Balanced ✓</div>
+            <div class="equation-box balanced">
+              <span class="coeff">2</span><span class="reactant">Mg</span><span class="op">+</span><span class="reactant">O₂</span><span class="arrow">→</span><span class="coeff">2</span><span class="product">MgO</span>
+            </div>
+            <p class="step-note">Mg: 2=2 ✓ &nbsp; O: 2=2 ✓</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rep-section">
+        <h3 class="subsection-title">📊 State Symbols in Equations</h3>
+        <div class="table-wrap">
+          <table class="chem-table">
+            <thead><tr><th>State</th><th>Symbol</th><th>Example</th></tr></thead>
+            <tbody>
+              <tr><td>Solid</td><td><code>(s)</code></td><td>Mg(s)</td></tr>
+              <tr><td>Liquid</td><td><code>(l)</code></td><td>H₂O(l)</td></tr>
+              <tr><td>Gas</td><td><code>(g)</code></td><td>CO₂(g)</td></tr>
+              <tr><td>Aqueous</td><td><code>(aq)</code></td><td>NaCl(aq)</td></tr>
+              <tr><td>Heat Applied</td><td><code>Δ</code></td><td>CaCO₃ →<sup>Δ</sup> CaO + CO₂</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Concepts -->
+  <section class="section section-dark" id="concepts">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">🧠 Key Concepts</div>
+        <h2 class="section-title">Oxidation, Reduction &amp; Redox</h2>
+        <p class="section-desc">Understanding electron transfer and oxygen gain/loss</p>
+      </div>
+      <div class="concept-grid">
+        <div class="concept-card oxidation-card">
+          <div class="concept-icon">🔥</div>
+          <h3>Oxidation</h3>
+          <ul class="concept-list">
+            <li>Gain of oxygen</li>
+            <li>Loss of hydrogen</li>
+            <li>Loss of electrons</li>
+            <li>Substance = <em>Reducing Agent</em></li>
+          </ul>
+          <div class="concept-example"><code>2Mg + O₂ → 2MgO</code><small>Mg is oxidised</small></div>
+        </div>
+        <div class="concept-card redox-card">
+          <div class="concept-icon">⚡</div>
+          <h3>Redox Reactions</h3>
+          <p>Oxidation and reduction occur simultaneously. The oxidised substance is the <strong>reducing agent</strong>; the reduced substance is the <strong>oxidising agent</strong>.</p>
+          <div class="concept-example"><code>CuO + H₂ → Cu + H₂O</code><small>Cu²⁺ reduced; H₂ oxidised</small></div>
+        </div>
+        <div class="concept-card reduction-card">
+          <div class="concept-icon">❄️</div>
+          <h3>Reduction</h3>
+          <ul class="concept-list">
+            <li>Loss of oxygen</li>
+            <li>Gain of hydrogen</li>
+            <li>Gain of electrons</li>
+            <li>Substance = <em>Oxidising Agent</em></li>
+          </ul>
+          <div class="concept-example"><code>CuO + H₂ → Cu + H₂O</code><small>CuO is reduced</small></div>
+        </div>
+      </div>
+      <div class="effects-grid">
+        <div class="effect-card">
+          <div class="effect-icon">🦺</div>
+          <h3>Corrosion</h3>
+          <p>Gradual eating away of metals by air, moisture and other gases.</p>
+          <div class="concept-example"><code>4Fe + 3O₂ + xH₂O → 2Fe₂O₃·xH₂O</code><small>Rust (hydrated iron oxide)</small></div>
+          <div class="prevention-tag">🛡️ Prevention: Painting, Galvanising, Alloying</div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-icon">🧈</div>
+          <h3>Rancidity</h3>
+          <p>Oxidation of fats/oils in food giving an unpleasant smell and taste. Caused by oxygen, moisture, and light.</p>
+          <div class="prevention-tag">🛡️ Prevention: Antioxidants, Nitrogen flushing, Refrigeration</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reaction Types -->
+  <section class="section" id="reactions">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">⚗️ Reaction Types</div>
+        <h2 class="section-title">Types of Chemical Reactions</h2>
+        <p class="section-desc">Click any card to expand details and examples</p>
+      </div>
+      <div class="reactions-grid" id="reactionsGrid"></div>
+    </div>
+  </section>
+
+  <!-- MCQ Quiz -->
+  <section class="section section-dark" id="mcq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">🎯 Competency-Based MCQ Quiz</div>
+        <h2 class="section-title">Test Your Understanding</h2>
+        <p class="section-desc">25 carefully crafted MCQs to assess conceptual clarity and application skills</p>
+      </div>
+      <div class="quiz-container" id="quizContainer">
+        <div class="quiz-progress">
+          <div class="progress-info">
+            <span id="qProgress">Question 1 of 25</span>
+            <span id="qScore">Score: 0</span>
+          </div>
+          <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar"></div></div>
+        </div>
+        <div class="question-card" id="questionCard">
+          <div class="q-category" id="qCategory"></div>
+          <p class="q-text" id="qText"></p>
+          <div class="q-options" id="qOptions"></div>
+          <div class="q-feedback" id="qFeedback"></div>
+          <div class="q-actions">
+            <button class="btn-next" id="btnNext" onclick="nextQuestion()" style="display:none">Next Question →</button>
+          </div>
+        </div>
+        <div class="quiz-result" id="quizResult" style="display:none">
+          <div class="result-icon" id="resultIcon"></div>
+          <h3 id="resultTitle"></h3>
+          <p id="resultDesc"></p>
+          <div class="result-score"><div class="rs-circle"><span id="finalScore">0</span><small>/ 25</small></div></div>
+          <div class="result-breakdown" id="resultBreakdown"></div>
+          <button class="btn-primary" onclick="restartQuiz()">Retake Quiz 🔄</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practice Questions -->
+  <section class="section" id="questions">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">📝 Competency-Based Questions</div>
+        <h2 class="section-title">Practice &amp; Master</h2>
+        <p class="section-desc">Application-based questions to build higher-order thinking skills</p>
+      </div>
+      <div class="q-filter-tabs" id="filterTabs">
+        <button class="filter-tab active" onclick="filterQuestions('all',this)">All Questions</button>
+        <button class="filter-tab" onclick="filterQuestions('1mark',this)">1 Mark</button>
+        <button class="filter-tab" onclick="filterQuestions('2mark',this)">2 Marks</button>
+        <button class="filter-tab" onclick="filterQuestions('3mark',this)">3 Marks</button>
+        <button class="filter-tab" onclick="filterQuestions('5mark',this)">5 Marks</button>
+        <button class="filter-tab" onclick="filterQuestions('case',this)">Case Study</button>
+      </div>
+      <div class="pq-list" id="pqList"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-icon">⚗️</span>
+          <div>
+            <div class="logo-title">ChemLearn</div>
+            <div class="logo-sub">CBSE Class 10 · Science</div>
+          </div>
+        </div>
+        <p class="footer-tagline">Making Chemistry Competency-Focused &amp; Fun 🧪</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ChemLearn · CBSE Class 10 · Chapter 1: Chemical Reactions &amp; Equations</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
